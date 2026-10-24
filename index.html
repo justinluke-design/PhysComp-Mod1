@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Physical Computing Fall 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/lpo3bxz.css">
+
+<style>
+
+h1,h2 {
+  font-family: "michroma", sans-serif;
+  font-weight: 100;
+  }
+body, h3, h4,h5 {
+  color: #9e9e9e;
+  width: 100%;
+  }
+
+body {
+  font-size:16px;
+  background-color: #e8e1df; /* your page background color */
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px; /* grid cell size */
+  font-family: "courier-new", sans-serif;
+  font-weight: 100;
+  width: 100%;
+  }
+
+#mySidebar {
+  z-index:3;
+  font-weight:bold;
+  font-family: "courier-new", sans-serif;
+  background-color: #e8e1df;
+  border-bottom: 1px solid rgba(158, 158, 158, 0.5);
+  justify-content: center;
+  }
+
+.w3-center-flex {
+  display: flex;
+  justify-content: center;
+  
+  }
+
+.header-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4%;
+  padding: 3%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+hr {
+  width:100%;
+  border: 1px solid rgba(158, 158, 158, 0.5);
+  border-radius:0px;
+  margin:auto;
+  margin-top:80px;
+  margin-bottom:40px;
+  }
+
+.description {
+  background-color: #e8e1df;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 40px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: rgba(0, 0, 0, 0.05);
+  padding: 1%;
+  }
+
+p {
+  font-size: 13pt;
+  color: #606469;
+  font-family: "courier-new", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+} 
+
+p1 {
+  font-size: 15pt;
+  color: #fd6900;
+  font-family: "courier-new", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+h1 { 
+  font-size: 4rem;
+  color: #fd6900;
+  font-weight: 900;
+  line-height: 1;
+  text-align: left;
+  }
+h2 {
+  font-size: 1.2rem;
+  color: #9e9e9e;
+  font-weight: 400;
+  width: 100%;
+  margin: auto;
+  font-family: 'Courier-new', sans-serif;
+  text-transform: uppercase;
+  line-height: 2.7;
+  text-align: left;
+
+  }
+
+h3 {
+  font-family: 'courier-new', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fd6900;
+  margin-bottom: 30px;
+  }
+
+h4 {
+  font-family: 'Michroma', sans-serif;
+  color: #fd6900;
+  font-size: 1rem;
+  line-height: 0.9;
+  align-items: center;
+  
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: #fd6900;
+  font-weight: 600;
+
+}
+.grid {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto;
+  width: 100%;
+}
+.w3-half img{
+  margin-bottom:-6px;
+  margin-top:16px;
+  opacity:0.8;
+  cursor:pointer
+  } */
+.w3-half img:hover{
+  opacity:1
+  }
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-bar w3-collapse w3-top w3-large w3-padding" style="" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-display-topleft" style="display:none;font-size:22px"></a>
+  <span class="w3-bar-item w3-mobile">
+    <h4 style=""><b>IXD DESN 30146<br>Fall 2026</b></h4>
+  </span> 
+  <!-- <h3 class="" style="color: #fd6900; line-height: 1.0;"><b>IXD DESN 30146<br>Fall 2026</b></h3> -->
+  <div class="w3-rest w3-center-flex">
+    <a href="#Home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-opacity w3-mobile" style="color: #9e9e9e; text-transform: uppercase; border-radius: 3px;">Home</a> 
+    <a href="#Module1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-opacity w3-mobile" style="color: #9e9e9e; text-transform: uppercase; border-radius: 3px;">Module 1</a> 
+    <a href="#Activity1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-opacity w3-mobile" style="color: #9e9e9e; text-transform: uppercase; border-radius: 3px;">Activity 1</a> 
+    <a href="#Activity2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-opacity w3-mobile" style="color: #9e9e9e; text-transform: uppercase; border-radius: 3px;">Activity 2</a> 
+    <a href="#Activity3" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-opacity w3-mobile" style="color: #9e9e9e; text-transform: uppercase; border-radius: 3px;">Activity 3</a> 
+    <a href="#Project" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-opacity w3-mobile" style="color: #9e9e9e; text-transform: uppercase; border-radius: 3px;">Project 001</a> 
+  </div>
+</nav>
+
+<!-- Top menu on small screens
+<header class="w3-container w3-top w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Menu</span>
+</header> -->
+
+<!-- 
+  if you want to link your image to a video use one of the following alt links as an example:
+
+  alt="test1Lorem ipsum dolor sit amet, consectetur adipiscing elit test1Lorem ipsum dolor sit amet, consectetur adipiscing elit <a href='https://www.youtube.com/embed/tgbNymZ7vqY' target='_blank'><p>Project Video Link</p></a>"> 
+  alt="test2Lorem ipsum dolor sit amet, consectetur adipiscing elit <div class='container'><iframe class='responsive-iframe' src='https://www.youtube.com/embed/tgbNymZ7vqY'></iframe></div>">
+
+-->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:0px;margin-right:0px">
+
+  <!-- Header -->
+  <div class="" style="margin-top:190px;">
+    <div class="" style="align-items: center; text-align: center; padding: 1%;">
+      <div class="header-grid" style="" id="">
+           <div style="">
+            <h1 class="" style="width: 100%; margin: auto;" id="Home"><b>module 01</b></h1>
+            <h2 class="" style=""><b>Weekly Activity Template</b></h2>
+            </div>
+    
+          <div style="">
+            <h1 class="" style="width: 100%; margin: auto;"><b>project 01</b></h1>
+            <h2 class="" style=""><b>Sensors & Data Input</b></h2>
+            </div>
+      <h1 class="" style="width: 100%; margin: auto;"><b>justin martin</b></h1>
+  </div>
+  </div>
+  </div>
+
+  
+  <hr style="" class="">
+
+
+
+  <!-- Project 1 Photo grid (modal) -->
+  <div id="Activity1" style="text-align: center; padding: 1%;" >
+    <h3 style="">[activity 01]</h3>
+    <div class="grid">
+      <img src="images/Activity1/1.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Connecting Arduino">
+      <img src="images/Activity1/2.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Code setup + troubleshooting">
+      <img src="images/Activity1/5.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Light flasher successful">
+      <img src="images/Activity1/3.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="playing around with 1 LEDs in the (+) and (-) pins">
+      <img src="images/Activity1/4.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Double LEDs successful">
+    </div>
+  </div>
+  
+  <hr style="" class="">
+
+  <div id="Activity2" style="text-align: center;padding: 1%;" >
+    <h3 style="">[activity 02]</h3>
+    <div class="grid" style="">
+      <img src="images/Activity2/1.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Connecting Arduino Sensor Kit">
+      <img src="images/Activity2/2.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Connecting Arduino to Protopie Connect">
+      <img src="images/Activity2/3.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Humidity working with wired cable">
+      <img src="images/Activity2/4.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Setting up + troubleshooting wireless connection">
+      <img src="images/Activity2/5.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Wireless connection successful">
+    </div>
+  </div>
+
+  <hr style="" class="">
+
+
+  <div id="Activity3" style="text-align: center;padding: 1%;" >
+    <h3 style="">[activity 03]</h3>
+    <div class="grid" style="">
+      <img src="images/Activity3/1.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Connecting Arduino Sensor Kit">
+      <img src="images/Activity3/2.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Controls working through Protopie">
+      <img src="images/Activity3/3.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Controls working in TouchDesigner">
+      <img src="images/Activity3/4.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Playing around with noise distortion and textures in TouchDesigner">
+      <img src="images/Activity3/5.jpeg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" alt="Playing around with noise distortion and textures in TouchDesigner">
+    </div>
+  </div>
+
+
+
+  <hr style="" class="">
+
+
+  <div id="ResearchActivity" style="text-align: center;padding: 1%;" >
+    <h1 style="text-align: center">research activity</h1>
+    <h3 class="" style="width:100%; margin-top: 100px;">[consumer trend research]</h3>
+    <div class="description"style="">
+    <p class="w3-text-grey" style="">
+    We looked around and dedided to focus on how people are using local environmental data to make decisions about farming & agriculture.
+      This led us to research how people are making eco-friendly decisions in their daily lives, and how to better encourage these choices.
+    </p>
+    </div>
+    <div class="grid" style="">
+      <img src="images/Consumer/1.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="From TrendWatching, communities in Central and South America are using local climate data in tandem with their agricultural, fishing, burning and 
+      crop protection.<br>Source: Team TrendWatching. “HOMEMADE SCIENCE: Communities Are Turning Local Climate Data into Practical Decisions..” TrendWatching, 
+      7 Aug. 2026, app.trendwatching.com/daily. Accessed 19 Oct. 2026.">
+      <img src="images/Consumer/2.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)"
+      alt="An example of using local weather data to make decisions about burning. Combining multiple datasets and translating it into accessible, useful 
+      information for different sectors could allow people to make more informed decisions and help with future planning.<br>Source: K., Helen. A Sign 
+      Showing You the Fire Danger Level. Pacific Crest Trail Association, www.pcta.org/discover-the-trail/backcountry-basics/fire/fire-restrictions-warnings-watches/. 
+      Accessed 19 Oct. 2026, Photograph.">
+      <img src="images/Consumer/3.png" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)"
+      alt="A graph showing trends in home energy use in the US over the last 30 years. <br> Source: Kennedy, Brian, and Isabelle Pula. “What Eco-Friendly 
+      Actions Do Americans Take?” Pew Research Center, 28 May 2026, www.pewresearch.org/science/2026/05/28/from-carpooling-to-buying-secondhand-what-eco-friendly-actions-do-americans-take-and-why/. 
+      Accessed 19 Oct. 2026.">
+    </div>
+
+    <h3 class="" style="width: 100%; margin:auto; margin: 60px 0px 20px 0px;">[personas research]</h3>
+    <div class="description"style="">
+    <p class="w3-text-grey" style="">
+    Researching behaviours and motivations from Pew Research Center about eco-friendly actions. Unfortunately, this data is limited to US residents only,
+     but it is still useful to understand how people are making eco-friendly decisions in their daily lives.
+    </p>
+    </div>
+    <div class="grid">
+      <img src="images/Persona/1.png" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="When asked about why people made decisions that were more eco-friendly, most people responded they were motivated by saving money than by 
+      helping the environment. However, most people who recycle state they did it for environmental reasons.<br> Source: Kennedy, Brian, and Isabelle Pula. 
+      “What Eco-Friendly Actions Do Americans Take?” Pew Research Center, 28 May 2026, www.pewresearch.org/science/2026/05/28/from-carpooling-to-buying-secondhand-
+      what-eco-friendly-actions-do-americans-take-and-why/. Accessed 19 Oct. 2026.">
+      <img src="images/Persona/2.png" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="Mixed engagement with eco-friendly habits. Decisions seeem to be tied closely to what's convenient and easy to do. <br> Source: Kennedy, Brian, 
+      and Isabelle Pula. “What Eco-Friendly Actions Do Americans Take?” Pew Research Center, 28 May 2026, www.pewresearch.org/science/2026/05/28/from-carpooling-to-
+      buying-secondhand-what-eco-friendly-actions-do-americans-take-and-why/. Accessed 19 Oct. 2026.">
+      <img src="images/Persona/3.png" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="Saving money appears to be the strongest motivator when it come to making environmentally friendly choices.<br>Source: Kennedy, Brian, and Isabelle Pula. 
+      “What Eco-Friendly Actions Do Americans Take?” Pew Research Center, 28 May 2026, www.pewresearch.org/science/2026/05/28/from-carpooling-to-buying-secondhand-what-eco
+      -friendly-actions-do-americans-take-and-why/. Accessed 19 Oct. 2026.">
+    </div>
+
+    <h3 class="" style="width: 100%; margin:auto; margin: 60px 0px 20px 0px;">[HMI research]</h3>
+    <div class="description"style="">
+    <p class="w3-text-grey" style="">
+    HMW Statement focuses on making people feel positively about their eco-friendly choices and help them feel like a stakeholder in taking care of the planet instead of just someone 'passing through'
+    </p>
+    </div>
+    <div class="grid" style="">
+      <img src="images/HMI/1.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="Two problem spaces:<br>1) Lack of connection between cause and effect on action and environment.<br>2) People don’t feel like a ‘stakeholder’ 
+      when it comes to taking care of the planet.<br>Source: Gariev, Vitaly. Portrait of Retired Man in Casual Clothing Showing Thumbs-Up Gesture Standing 
+      Alone at Home Smiling Looking at Camera. People and Emotions Concept. Unsplash, 24 Sept. 2025, unsplash.com/photos/smiling-older-man-gives-two-thumbs-up-
+      XcHGzdXaLX0. Accessed 19 Oct. 2026, Photograph.">
+      <img src="images/HMI/2.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="How might we provide positive feedback to users about their lifestyle choices that encourages them to engage in eco-friendly lifestyle habits?<br>
+      Source: Kaufmann, Alexander. A Street Sign with a Bicycle on It. Unsplash, 11 Mar. 2023, unsplash.com/photos/a-street-sign-with-a-bicycle-on-it-AxtJQVuM-
+      j4. Accessed 19 Oct. 2026, Photograph.">">
+      <img src="images/HMI/3.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="It is based on an existing problem. Taking care of the environment is not only a personal choice, but a responsibility the Canadian Government 
+      takes very seriously (ex. Canadian Net-Zero Emissions Accountability Act). Focusing on how individuals are acting in a way that produces positive results 
+      encourages them to continue acting in a certain way and boosts self-esteem and feelings of confidence. The ‘How Might We’ statement provides enough direction 
+      to finding a solution, but doesn’t limit it to any one thing while keeping the goal clear: people should feel positively about what they are doing to help 
+      the environment.<br>Source: Spiske, Markus. Person Holding Eco Not Ego Signage. Unsplash, 22 Sept. 2019, unsplash.com/photos/person-holding-eco-not-ego-
+      signage-_kB9NKpErH4. Accessed 19 Oct. 2026, Photograph.">
+    </div>
+
+    <h3 class="" style="width: 100%; margin:auto; margin: 60px 0px 20px 0px;">[project path research]</h3>
+    <div class="description"style="">
+    <p class="" style="">
+    A group project following the Design Path focusing on creating a prototype that tracks a person's eco-friendly actions and provides positive feedback.
+    </p>
+    </div>
+    <div class="grid" style="">
+      <img src="images/Path/1.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="For this category, I would be more interested in pursuing a design path as this would project would be based on 
+      using data and converting it into a usable product for someone to use.<br>Source: charlesdeluvio. Man Using MacBook. Unsplash, 29 Mar. 2019, unsplash.com/photos/man-using-macbook-Lks7vei-eAg. Accessed 19 Oct. 2026, Photograph.">
+      <img src="images/Path/2.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="I would want to work in collaboration with someone else, as I find research is more comprehensive leading to a 
+      better product, it’s easier to troubleshoot issues, and it grows my teamwork and communication skills.<br> Source: ThisisEngineering. Woman Holding Gold Iphone 6. Unsplash, 7 Feb. 2020, unsplash.com/photos/woman-
+      holding-gold-iphone-6-Ab1CJDxlnOM. Accessed 19 Oct. 2026, Photograph.">
+      <img src="images/Path/3.jpg" style="width:100%; border-radius: 3%; padding: 1%; aspect-ratio: 1 / 1; object-fit: cover;" onclick="onClick(this)" 
+      alt="Equipment we might use for this project to sense data and turn it into actinable information for the user.<br> Source: 
+      Glauser, Robin. Flat Lay Photography of Circuit Board. Unsplash, 19 Apr. 2019, unsplash.com/photos/flat-lay-photography-of-circuit-board-zP7X_B86xOg. Accessed 19 Oct. 2026, Photograph.">
+    </div>
+  </div>
+
+
+
+  <hr style="" class="">
+
+  
+  <!-- Boilerplate -->
+  
+  
+  
+   <div class="" style="margin-top: 50px;">
+    <div class="" style="width: 100%; margin: auto; align-items: center; text-align: center; padding: 1%;">
+      <div class="header-grid" style="" id="">
+           <div>
+            <h1 class="w3-jumbo" style="padding-bottom: 2%;" id="Home"><b>project 01</b></h1>
+            <h2 class="" style="line-height: 1;"><b>Sensors & Data Input</b></h2>
+            </div>
+    
+          <div>
+            <h1 class="w3-jumbo" style="padding-bottom: 2%;"><b>final design</b></h1>
+            <h2 class="" style="line-height: 1;"><b>Ambient Interactive Visuals</b></h2>
+            </div>
+      <div class="description" style="width: 100%; text-align: left; padding: 4%;">
+      <p class="w3-text-grey" style="">
+        Our concept turns a hospital waiting area into a calm, responsive nature space. A projector displays a natural scene, such as a forest clearing or a lake, 
+        across a wall, and the scene responds to patients as they move: leaves drift and water ripples where someone walks or reaches, and wildlife appears as people approach. 
+        Gentle nature-inspired sound, such as birdsong, flowing water or soft ambient tones, plays alongside the visuals. Body tracking (Kinect or MediaPipe) feeds 
+        the movement into TouchDesigner, which controls the visuals and audio in real time. The goal is to give patients waiting between treatments a quiet, optional 
+        way to explore and focus on something other than their anxiety, without needing a screen, a device or any instructions.</p>
+        </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <div id="Project#" class="w3-container" style="margin-top:0px; margin-bottom: 60px;">
+    
+    <img src="images/final/V2.png" style="width:100%; border-radius: 0.5%;" onclick="onClick(this)" 
+    alt="Final mockup render of our project plan shows humans interacting with a nature wall in a waiting area">
+
+  </div>
+  
+   <!-- Modal for full size images on click-->
+   <div id="modal01" class="w3-modal" style="padding-top:0; backdrop-filter: blur(15px); background-color: rgba(0, 0, 0, 0.5);" onclick="this.style.display='none'">
+    <span class="w3-jumbo w3-button w3-transparent w3-display-topright" style="color: #fd6900; padding: 10px; margin: 10px 20px 0px 0px; font-weight: bold;">×</span>
+    <div class="w3-modal-content w3-transparent" style ="padding:40px; text-align: left;">
+      <img id="img01" class="w3-image" style="margin-bottom: 5%; text-align: left;">
+      <p1 id="caption" style="text-align: left;"></p1>
+
+      <!-- <div id="urLink"></div> -->
+      <!-- <a id="urLink" class="container"><iframe class="responsive-iframe"></iframe></a> -->
+    <!-- </div> -->
+  </div>
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+
+<!-- <div class="w3-light-grey w3-container w3-padding-12" style="margin-top:75px;padding-right:58px; border-top-right-radius: 10px; border-top-left-radius: 10px;"><p class="w3-right w3-tiny">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div> -->
+
+<script>
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+
+  // var captionUrl = document.getElementById("urLink");
+  // captionUrl.innerHTML = element.url;
+
+  //document.getElementById("urLink").src = element.url;
+}
+</script>
+
+</body>
+</html>
